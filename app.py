@@ -46,3 +46,12 @@ count_beyond_3_std = beyond_3_std.shape[0]
 
 st.subheader("Outliers Beyond 3 Standard Deviations")
 st.write(f"**Data points beyond 3 standard deviations:** {count_beyond_3_std} out of {df.shape[0]}")
+
+# Display time stamps for readings within 3 standard deviations
+within_3_std = df[(df["temperature"] >= mean - 3*std_dev) & (df["temperature"] <= mean + 3*std_dev)]
+
+st.subheader("Time Stamps for Readings Within 3 Standard Deviations")
+if "timestamp" in within_3_std.columns:
+    st.dataframe(within_3_std[["timestamp", "temperature"]])
+else:
+    st.info("No 'timestamp' column found in the data.")
