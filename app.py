@@ -29,10 +29,18 @@ if "temperature" not in df.columns:
 # Compute mean and std dev from actual data
 mean = df["temperature"].mean()
 std_dev = df["temperature"].std()
+count = df["temperature"].count()
+min_temp = df["temperature"].min()
+max_temp = df["temperature"].max()
+median_temp = df["temperature"].median()
 
-# Display mean and standard deviation
+# Display summary statistics, including the number of data points
 st.subheader("Summary Statistics")
+st.write(f"**Number of Data Points:** {count}")
 st.write(f"**Mean Temperature:** {mean:.2f} °C")
+st.write(f"**Median Temperature:** {median_temp:.2f} °C")
+st.write(f"**Min Temperature:** {min_temp:.2f} °C")
+st.write(f"**Max Temperature:** {max_temp:.2f} °C")
 st.write(f"**Standard Deviation:** {std_dev:.2f}")
 
 # Normal distribution plot
