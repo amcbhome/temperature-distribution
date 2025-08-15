@@ -10,7 +10,7 @@ st.title("Normal Distribution Snapshot of IoT Data")
 
 # Auto-refresh every 30 seconds
 st_autorefresh = st.experimental_rerun  # old approach, replaced with this:
-# st_autorefresh = st.autorefresh(interval=30_000, key="data_refresh")
+st_autorefresh = st.autorefresh(interval=30_000, key="data_refresh")
 
 # GitHub raw CSV URL (replace with your actual repo and branch)
 csv_url = "https://github.com/amcbhome/temperature-distribution/blob/main/temperature_data.csv"
