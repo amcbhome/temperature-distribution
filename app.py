@@ -26,3 +26,16 @@ std_dev = df["temperature"].std()
 st.subheader("Summary Statistics")
 st.write(f"**Mean Temperature:** {mean:.2f} °C")
 st.write(f"**Standard Deviation:** {std_dev:.2f}")
+
+# Empirical Rule display
+st.subheader("Empirical Rule (68-95-99.7 Rule)")
+st.markdown(
+    f"""
+    - **68%** of data falls within **1 standard deviation**:  
+      [{mean - std_dev:.2f} °C, {mean + std_dev:.2f} °C]
+    - **95%** of data falls within **2 standard deviations**:  
+      [{mean - 2*std_dev:.2f} °C, {mean + 2*std_dev:.2f} °C]
+    - **99.7%** of data falls within **3 standard deviations**:  
+      [{mean - 3*std_dev:.2f} °C, {mean + 3*std_dev:.2f} °C]
+    """
+)
