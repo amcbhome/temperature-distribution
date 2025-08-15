@@ -9,7 +9,7 @@ st.set_page_config(page_title="Temperature Distribution Snapshot", layout="wide"
 st.title("Normal Distribution Snapshot of IoT Data")
 
 # GitHub raw CSV URL (replace with your actual repo and branch)
-csv_url = "https://github.com/amcbhome/temperature-distribution/blob/main/temperature_data.csv"
+csv_url = "https://raw.githubusercontent.com/amcbhome/temperature-distribution/0420f5d3237f958c050c9a19b767b2f2e711b3dc/temperature_data.csv"
 
 try:
     df = pd.read_csv(csv_url)
