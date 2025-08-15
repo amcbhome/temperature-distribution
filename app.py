@@ -9,7 +9,7 @@ st.set_page_config(page_title="Temperature Distribution Snapshot", layout="wide"
 st.title("Normal Distribution Snapshot of IoT Data")
 
 # Auto-refresh every 30 seconds
-st.experimental_autorefresh(interval=30_000, key="data_refresh")
+st.autorefresh(interval=30_000, key="data_refresh")
 
 # GitHub raw CSV URL (replace with your actual repo and branch)
 csv_url = "https://github.com/amcbhome/temperature-distribution/blob/main/temperature_data.csv"
