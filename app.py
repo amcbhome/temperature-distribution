@@ -13,7 +13,7 @@ st_autorefresh = st.experimental_rerun  # old approach, replaced with this:
 st_autorefresh = st.autorefresh(interval=30_000, key="data_refresh")
 
 # GitHub raw CSV URL (replace with your actual repo and branch)
-csv_url = "https://raw.githubusercontent.com/<username>/<repo>/<branch>/temperature_data.csv"
+csv_url = "https://raw.githubusercontent.com/amcbhome/temperature-distribution/main/temperature_data.csv"
 
 try:
     df = pd.read_csv(csv_url)
