@@ -27,6 +27,18 @@ st.subheader("Summary Statistics")
 st.write(f"**Mean Temperature:** {mean:.2f} °C")
 st.write(f"**Standard Deviation:** {std_dev:.2f}")
 
+# Compute and display skewness
+skewness = df["temperature"].skew()
+st.subheader("Skewness of Temperature Data")
+st.write(f"**Skewness:** {skewness:.2f}")
+
+if abs(skewness) < 0.5:
+    st.info("The dataset is fairly symmetric (low skew).")
+elif skewness > 0.5:
+    st.info("The dataset is positively skewed (tail to the right).")
+elif skewness < -0.5:
+    st.info("The dataset is negatively skewed (tail to the left).")
+
 # Empirical Rule display
 st.subheader("Empirical Rule (68-95-99.7 Rule)")
 st.markdown(
