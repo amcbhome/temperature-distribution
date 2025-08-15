@@ -39,3 +39,10 @@ st.markdown(
       [{mean - 3*std_dev:.2f} °C, {mean + 3*std_dev:.2f} °C]
     """
 )
+
+# Display how many data points are beyond 3 standard deviations
+beyond_3_std = df[(df["temperature"] < mean - 3*std_dev) | (df["temperature"] > mean + 3*std_dev)]
+count_beyond_3_std = beyond_3_std.shape[0]
+
+st.subheader("Outliers Beyond 3 Standard Deviations")
+st.write(f"**Data points beyond 3 standard deviations:** {count_beyond_3_std} out of {df.shape[0]}")
